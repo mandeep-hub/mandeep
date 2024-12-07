@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Gyanodaya English School</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        header {
+            background-color: #004080;
+            color: #ffffff;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            height: 50px;
+            margin-left: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            margin-right: 20px;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #FE70DC;
+            background-color: rgb(222, 222, 222);
+            border-radius: 5px;
+        }
+
+        /* Calendar Section */
+        #calendar-section {
+            margin-top: 80px; /* Offset for header */
+            padding: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+
+        .calendar-header h2 {
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        .calendar-header button {
+            font-size: 1.5rem;
+            background: #0078d7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .calendar-header button:hover {
+            background: #005bb5;
+        }
+
+        table {
+            width: 100%;
+            max-width: 900px;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            width: 14.2%;
+            height: 80px;
+            text-align: center;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        td:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.1);
+        }
+
+        .today {
+            background-color: #ffeb3b;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 5px #ffeb3b;
+            }
+            50% {
+                box-shadow: 0 0 15px #ffeb3b;
+            }
+        }
+
+        /* Events Section */
+        #events-section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .events-list-container {
+            max-height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+            border: 2px solid white;
+            border-radius: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #333;
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        li:hover {
+            background: #555;
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="D:\\att.IsENyCbACvruWiSMUlbjtzI-m6HokQ0iAzmt6hEDbZA-removebg-preview.png" alt="Shree Gyanodaya Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="its gallery.html">Gallery</a></li>
+                <li><a href="its teachers.html">Teachers</a></li>
+                <li><a href="its programme.html">Programs</a></li>
+                <li><a href="its admission.html">Apply for admissions</a></li>
+                <li><a href="news and events.html">News and Events</a></li>
+                <li><a href="its about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="calendar-section">
+        <div class="calendar-header">
+            <button id="prev-month">❮</button>
+            <h2 id="month-year"></h2>
+            <button id="next-month">❯</button>
+        </div>
+        <table id="calendar">
+            <thead>
+                <tr>
+                    <th>आइत</th>
+                    <th>सोम</th>
+                    <th>मंगल</th>
+                    <th>बुध</th>
+                    <th>बिही</th>
+                    <th>शुक्र</th>
+                    <th>शनि</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="events-section">
+        <h2>Events</h2>
+        <div class="events-list-container">
+            <ul id="events-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        const today = new Date();
+        let currentMonth = today.getMonth();
+        let currentYear = today.getFullYear();
+
+        const nepaliMonths = ["बैशाख", "जेष्ठ", "आषाढ", "श्रावण", "भाद्र", "आश्विन", "कार्तिक", "मंसिर", "पुष", "माघ", "फाल्गुन", "चैत्र"];
+
+        const events = [
+            { date: "2024-12-02", caption: "Annual Sports Day" },
+            { date: "2024-12-15", caption: "Science Exhibition" }
+        ];
+
+        const calendar = document.querySelector("#calendar tbody");
+        const monthYear = document.querySelector("#month-year");
+        const prevMonth = document.querySelector("#prev-month");
+        const nextMonth = document.querySelector("#next-month");
+
+        function loadCalendar(month, year) {
+            calendar.innerHTML = "";
+            monthYear.textContent = `${nepaliMonths[month]} ${year}`;
+            const firstDay = new Date(year, month).getDay();
+            const totalDays = new Date(year, month + 1, 0).getDate();
+            let date = 1;
+
+            for (let i = 0; i < 6; i++) {
+                const row = document.createElement("tr");
+                for (let j = 0; j < 7; j++) {
+                    const cell = document.createElement("td");
+                    if (i === 0 && j < firstDay) {
+                        cell.innerHTML = "";
+                    } else if (date > totalDays) break;
+                    else {
+                        cell.textContent = date;
+                        date++;
+                    }
+                    row.appendChild(cell);
+                }
+                calendar.appendChild(row);
+            }
+        }
+
+        prevMonth.addEventListener("click", () => {
+            currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
+            loadCalendar(currentMonth, currentYear);
+        });
+
+        nextMonth.addEventListener("click", () => {
+            currentMonth = currentMonth === 11 ? 0 : currentMonth + 1;
+            loadCalendar(currentMonth, currentYear);
+        });
+
+        loadCalendar(currentMonth, currentYear);
+    </script>
+</body>
+</html>

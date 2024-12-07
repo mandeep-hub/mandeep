@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Gyanodaya English School</title>
+     <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        header {
+            background-color: #004080;
+            color: #ffffff;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            height: 50px;
+            margin-left: 20px;
+            background-color: rgba(255,255,255,0.8);
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .logo img{
+            height:100%;
+            width: auto;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            margin-right: 20px;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #FE70DC;
+            background-color: rgb(222, 222, 222);
+            border-radius: 5PX;
+        }
+        .admission-form-section {
+            padding: 100px 20px;
+            background-color: #5a5af4;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .admission-form-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .admission-form-container h2 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #004080;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 60%;
+            padding: 12px;
+            border: 1px solid #010101;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 15px;
+            background-color: #004080;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #003366;
+        }
+
+        .logo-header {
+            text-align: center;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .logo-header img {
+            max-width: 100%;
+            height: 120px;
+           
+
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 10px;
+            }
+        }
+       
+        </style>
+     </head>
+     <body>
+     <header>
+        <div class="logo">
+            <img src="D:\\att.IsENyCbACvruWiSMUlbjtzI-m6HokQ0iAzmt6hEDbZA-removebg-preview.png" alt="Shree Gyanodaya Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="its gallery.html">Gallery</a></li>
+                <li><a href="its teachers.html">Teachers</a></li>
+               
+                <li><a href="its programme.html">Programs</a></li>
+                <li><a href="its admission.html">Apply for admissions</a></li>
+               
+                <li><a href="news and events.html">News and Events</a></li>
+                <li><a href="its about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="admission-form-section">
+        <div class="admission-form-container">
+            <div class="logo-header">
+                <img src="C:\Users\sathi\Downloads\att.naEOd6nhW0IoX0_9Eps4ZaJb9JAlejAsn7gL75cZc1I.jpg" alt="Shree Gyanodaya English School">
+            </div>
+            <h2>Admission Form</h2>
+            <form action="submit_admission_form.php" method="post">
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName" name="studentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date of birth">Date Of Birth</label>
+                    <input type="date" name="Date Of Birth" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="grade">Grade</label>
+                    <select id="grade" name="grade" required>
+                        <option value="">Select Grade</option>
+                        <option value="Grade 1">Grade 1</option>
+                        <option value="Grade 2">Grade 2</option>
+                        <option value="Grade 3">Grade 3</option>
+                        <option value="Grade 4">Grade 4</option>
+                        <option value="Grade 5">Grade 5</option>
+                        <option value="Grade 6">Grade 6</option>
+                        <option value="Grade 7">Grade 7</option>
+                        <option value="Grade 8">Grade 8</option>
+                        <option value="Grade 9">Grade 9</option>
+                        <option value="Grade 10">Grade 10</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fatherName">Father's Name</label>
+                    <input type="text" id="fatherName" name="fatherName" required>
+                </div>
+                <div class="form-group">
+                    <label for="motherName">Mother's Name</label>
+                    <input type="text" id="motherName" name="motherName" required>
+                </div>
+                <div class="form-group">
+                    <label for="fatherOccupation">Father's Occupation</label>
+                    <input type="text" id="fatherOccupation" name="fatherOccupation" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
